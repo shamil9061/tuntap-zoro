@@ -12,7 +12,7 @@ use tun_tap::{Iface, Mode};
 
 /// Run a shell command. Panic if it fails in any way.
 fn cmd(cmd: &str, args: &[&str]) {
-    let ecode = Command::new("ip")
+    let ecode = Command::new(cmd)
         .args(args)
         .spawn()
         .unwrap()
